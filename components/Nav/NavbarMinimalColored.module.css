@@ -1,10 +1,10 @@
 .navbar {
     width: rem(80px);
-    height: rem(750px);
+    height: 100%;
     padding: var(--mantine-spacing-md);
     display: flex;
     flex-direction: column;
-    background-color: var(--mantine-color-blue-filled);
+    background-color: #36626b;
   }
   
   .navbarMain {
@@ -15,6 +15,7 @@
   .link {
     width: rem(50px);
     height: rem(50px);
+    padding: var(--mantine-spacing-md);
     border-radius: var(--mantine-radius-md);
     display: flex;
     align-items: center;

@@ -1,13 +1,14 @@
 'use client';
 
-import { AppShell, Burger, Grid, rem, Button, Group, useMantineColorScheme } from '@mantine/core';
+import { AppShell, Burger, Grid, Title, Image } from '@mantine/core';
+import { IconFish } from '@tabler/icons-react';
 import { useDisclosure } from '@mantine/hooks';
 import Nav from '../components/Nav/Nav';
+import Link from 'next/link';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 
 export default function Page() {
     const [opened, { toggle }] = useDisclosure();
-    const { setColorScheme } = useMantineColorScheme();
 
     return (
         <AppShell
@@ -23,12 +24,20 @@ export default function Page() {
                 <Grid>
                     <Grid.Col span="auto">
                         <Burger
-                            opened={opened}
-                            onClick={toggle}
+                            opened={ opened }
+                            onClick={ toggle }
                             hiddenFrom="sm"
                             size="sm"
                         />
-                        <div>bluegill.world</div>
+                        <div>
+                            <Link href='/'>
+                                <Image
+                                    h={50}
+                                    w="auto"
+                                    src="/images/logo.png"
+                                />
+                            </Link>
+                        </div>
                     </Grid.Col>
                     <Grid.Col span={1}>
                         <ColorSchemeToggle />
@@ -39,8 +48,8 @@ export default function Page() {
             <AppShell.Navbar><Nav /></AppShell.Navbar>
 
             <AppShell.Main>
-                <h1>bluegill.world</h1>
-                <h2>by Fadi Tawfig</h2>
+                <Title order={1}>bluegill.world</Title>
+                <Title order={3}>Fishing logbook app by Fadi Tawfig</Title>
             </AppShell.Main>
         </AppShell>
     )
